@@ -1,0 +1,75 @@
+extends layout
+
+block content
+  section.hero.is-fullheight.is-dark.is-bold
+    .hero-head
+      .container
+        nav.nav
+          .container
+            .nav-left
+              a.nav-item(href='/')
+                img(src='/images/bulma-white.png', alt='Description')
+            span.nav-toggle
+              span
+              span
+              span
+            .nav-right.nav-menu
+              a.nav-item(href='/')
+                | Home
+              a.nav-item(href='/departments')
+                | Departments
+              a.nav-item(href='/departments/addnew')
+                | Add Data
+              a.nav-item(href='/auth/logout')
+                | Log Out
+                
+    .hero-body
+      .container
+        .columns.is-vcentered
+          .column.is-4.is-offset-4
+            h1.title
+              | Edit Data
+            .box
+              if (error)
+                //-for err in error
+                .notification.is-danger
+
+                  //--var er = error.message
+                  //-- var a = er.slice(1,10)
+                  //- h1= a
+                  | #{error}
+              form(method="POST", action="/departments/#{update._id}/update")
+                label.label.is-danger 
+                  | Components Name 
+                  strong.iscolor *
+                //- if (error == 'ValidationError: Please fill the Department Name')
+                //-   p.control.has-icon.has-icon-right
+                //-     input.input.is-danger(type="text", placeholder="Department Name", name="comp_name", value="#{update.comp_name}")
+                //-     span.icon.is-small
+                //- else
+                p.control
+                  input.input(type="text", placeholder="", name="comp_name", value="#{update.comp_name}")
+                label.label 
+                  | Description 
+                  strong.iscolor *
+                p.control
+                  input.input(type="text", placeholder="", name="description", value="#{update.description}")
+                label.label 
+                  | Value
+                  strong.iscolor *
+                p.control
+                  input.input(type="text", placeholder="", name="value", value="#{update.value}")
+                label.label Available
+                p.control
+                  input.input(type="value", placeholder="Contact Number", name="contact", value="#{update.contact}")
+                label.label Image
+                p.control
+                  input.input(type="text", placeholder="Image (URL)", name="picture", value="#{update.picture}")
+                p.control
+                  button.button.is-dark(type="submit" ) Submit
+                  span 
+                  a.btn.btn-link(href="/departments/#{update._id}")
+                        button.button.is-dark(type="button") Cancel
+              
+  
+  include footer

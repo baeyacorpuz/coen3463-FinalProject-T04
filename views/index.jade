@@ -1,0 +1,30 @@
+extends landing
+
+block content
+  section.hero.is-fullheight.is-dark.backgroundcus
+    .hero-body
+      .container.has-text-centered
+        .columns.is-vcentered
+          .column.is-2
+
+          .column.is-6.is-offset-1
+            h1.title.is-2
+              | C4E Components
+            br
+            p.has-addons.has-text-centered
+              a.button.is-large.is-white.is-outlined(href='/departments')
+                | Components
+              a.button.is-large.is-white.is-outlined(href='/departments/addnew')
+                | Add New
+              br
+              br
+              if (user)
+                p You are logged in as #{user.username}
+                a(href="/auth/logout") Logout
+              else
+                a(href='/auth/login')
+                  | Login
+                strong    |   
+                a(href='/auth/register')
+                  | Register
+    include footer
