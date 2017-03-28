@@ -16,7 +16,7 @@ const router = express.Router();
 
 
 var index = require('./routes/index');
-var departments = require('./routes/departments');
+var components = require('./routes/components');
 var auth = require('./routes/auth');
 
 var MongoURI = 'mongodb://baeyacorpuz:#x6bpG$0@ds137360.mlab.com:37360/finalproject'
@@ -49,7 +49,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 var User = require('./models/user');
-var Department = require('./models/departments');
+var Component = require('./models/components');
 
 passport.use(User.createStrategy());
 
@@ -67,11 +67,11 @@ mongoose.connect(MongoURI, function(err, res) {
     }
 });
 
-restify.serve(router, Department);
+restify.serve(router, Component);
 app.use(router);
 
 app.use('/', index);
-app.use('/departments', departments);
+app.use('/components', components);
 app.use('/auth', auth);
 
 // catch 404 and forward to error handler

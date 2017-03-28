@@ -8,7 +8,7 @@ block content
           .container
             .nav-left
               a.nav-item(href='/')
-                img(src='/images/bulma-white.png', alt='Description')
+                img(src='/images/C4e Components.png', alt='Description')
             span.nav-toggle
               span
               span
@@ -16,9 +16,9 @@ block content
             .nav-right.nav-menu
               a.nav-item(href='/')
                 | Home
-              a.nav-item(href='/departments')
+              a.nav-item(href='/components')
                 | Components
-              a.nav-item.is-active(href='/departments/addnew')
+              a.nav-item.is-active(href='/components/addnew')
                 | Add Data
               a.nav-item(href='/auth/logout')
                 | Log Out
@@ -44,7 +44,7 @@ block content
                   //--var er = "#{error}"
                   //--var a = er.slice(1)
                   //-h1= a
-              form(method="POST", action="/departments/addnew")
+              form(method="POST", action="/components/addnew")
                 label.label 
                   | Field with 
                   strong.iscolor *
@@ -70,6 +70,6 @@ block content
                 p.control
                   button.button.is-dark(type="submit") Submit
                   span  
-                  a.btn.btn-link(href="/departments")
+                  a.btn.btn-link(href="/components")
                         button.button.is-dark(type="button") Cancel
   include footer

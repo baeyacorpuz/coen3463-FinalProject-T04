@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  section.hero.is-fullheight.is-default.is-dark
+    .hero-head
+        .container
+          nav.nav
+            .container
+              .nav-left
+                a.nav-item(href='/')
+                  img(src='/images/C4e Components.png', alt='Description')
+              span.nav-toggle
+                span
+                span
+                span
+              .nav-right.nav-menu
+                a.nav-item(href='/')
+                  | Home
+                a.nav-item(href='/components')
+                  | Components
+                a.nav-item(href='/components/addnew')
+                  | Add Data
+                a.nav-item(href='/auth/logout')
+                  | Log Out
+    .hero-body
+      .container
+        .columns.is-vcentered
+          .column.is-5
+            figure.image.is-4by3
+              img(src="#{componentdata.picture}", alt='Image')
+          .column.is-6.is-offset-1
+            h1.title
+              | Components Details
+            br
+            h2.subtitle
+              | Component Name: #{componentdata.comp_name}
+            h2.subtitle
+              | Description: #{componentdata.description}
+            h2.subtitle
+              | Value: #{componentdata.value}
+            h2.subtitle
+              | Available:  #{componentdata.contact}
+            br
+            br
+            h2.subtitle
+              | Creation Date: #{moment(componentdata.createdate).format("LLL")}
+            h2.subtitle
+              | Update Date: #{componentdata.updatedate}
+    .tabs.is-fullwidth
+        .container
+          ul
+            li
+              a.btn.btn-link(href='/components/'+componentdata._id+'/update')
+                button.button.is-medium(type="button") Edit
+            li
+              a(href='/components/'+componentdata._id+'/delete')
+                button.button.is-medium(type="button") Delete
+  
+  include footer
+
+              
