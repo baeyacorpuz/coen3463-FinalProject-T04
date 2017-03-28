@@ -49,7 +49,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 var User = require('./models/user');
-var Component = require('./models/components');
+var Department = require('./models/departments');
 
 passport.use(User.createStrategy());
 
@@ -67,7 +67,7 @@ mongoose.connect(MongoURI, function(err, res) {
     }
 });
 
-restify.serve(router, Component);
+restify.serve(router, Department);
 app.use(router);
 
 app.use('/', index);

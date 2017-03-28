@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Government Departments + Officials/Secretaries',user: req.user  });
+  res.render('index', { title: 'C4E Components',user: req.user  });
 });
 
 module.exports = router;

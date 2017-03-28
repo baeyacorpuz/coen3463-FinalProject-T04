@@ -8,7 +8,7 @@ block content
           .container
             .nav-left
               a.nav-item(href='/')
-                img(src='/images/C4e Components.png', alt='Description')
+                img(src='/images/bulma-white.png', alt='Description')
             span.nav-toggle
               span
               span
@@ -16,9 +16,9 @@ block content
             .nav-right.nav-menu
               a.nav-item(href='/')
                 | Home
-              a.nav-item(href='/components')
-                | Components
-              a.nav-item(href='/components/addnew')
+              a.nav-item(href='/departments')
+                | Departments
+              a.nav-item(href='/departments/addnew')
                 | Add Data
               a.nav-item(href='/auth/logout')
                 | Log Out
@@ -38,13 +38,13 @@ block content
                   //-- var a = er.slice(1,10)
                   //- h1= a
                   | #{error}
-              form(method="POST", action="/components/#{update._id}/update")
+              form(method="POST", action="/departments/#{update._id}/update")
                 label.label.is-danger 
                   | Components Name 
                   strong.iscolor *
-                //- if (error == 'ValidationError: Please fill the Component Name')
+                //- if (error == 'ValidationError: Please fill the Department Name')
                 //-   p.control.has-icon.has-icon-right
-                //-     input.input.is-danger(type="text", placeholder="Component Name", name="comp_name", value="#{update.comp_name}")
+                //-     input.input.is-danger(type="text", placeholder="Department Name", name="comp_name", value="#{update.comp_name}")
                 //-     span.icon.is-small
                 //- else
                 p.control
@@ -68,7 +68,7 @@ block content
                 p.control
                   button.button.is-dark(type="submit" ) Submit
                   span 
-                  a.btn.btn-link(href="/components/#{update._id}")
+                  a.btn.btn-link(href="/departments/#{update._id}")
                         button.button.is-dark(type="button") Cancel
               
   

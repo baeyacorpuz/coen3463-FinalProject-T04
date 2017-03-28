@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var componentSchema = new Schema({
+var departmentSchema = new Schema({
 
   comp_name: {
       type: String,
-      required: [true, 'Please fill the Component Name']
+      required: [true, 'Please fill the Department Name']
       },
   description: {
       type: String,
@@ -21,4 +21,4 @@ var componentSchema = new Schema({
   picture:String,
 }, { collection: 'module4' });
 
-module.exports = mongoose.model('Component', componentSchema);
+module.exports = mongoose.model('Department', departmentSchema);
